@@ -3,4 +3,4 @@ public class MyFirstApp {
         System.out.print("Написано однажды, ");
         System.out.println("работает везде!");
     }
-}
+ }
