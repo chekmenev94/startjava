@@ -90,5 +90,61 @@ public class VariablesTheme {
         System.out.println("a = " + a + "; c = " + c);
         System.out.println("Способ перестановки переменных 3.Побитовой операции");
         System.out.println("a = " + a + "; c = " + c);
+
+        // TODO 6. вывод символов и их кодов
+        int simbol = '#';
+        char code = 35;
+        int simbol1 = '&';
+        char code1 = 38;
+        int simbol2 = '@';
+        char code2 = 64;
+        int simbol3 = '^';
+        char code3 = 94;
+        int simbol4 = '_';
+        char code4= 95;
+
+        System.out.println("\nКод символа # = " + simbol + ", соответствующий символ = " + code);
+        System.out.println("Код символа & = " + simbol1 + ", соответствующий символ = " + code1);
+        System.out.println("Код символа @ = " + simbol2 + ", соответствующий символ = " + code2);
+        System.out.println("Код символа ^ = " + simbol3 + ", соответствующий символ = " + code3);
+        System.out.println("Код символа _ = " + simbol4 + ", соответствующий символ = " + code4);
+
+        // TODO 7. Вывод в консоль ASCII-арт Дюка
+
+        char code5 = 47;
+        char code6 = 92;
+        char code7 = 95;
+        char code8 = 40;
+        char code9 = 41;
+
+        System.out.println("    " + code5 + code6 + "    ");
+        System.out.println("   " + code5 + "  " + code6 + "   ");
+        System.out.println("  " + code5 + code7 + code8 + " " + code9 + code6 + "  ");
+        System.out.print(" " + code5 + "      " + code6 + " \n" + code5 + code7 + code7 + code7);
+        System.out.println(code7 + "" + code5  + code6 + code7 + code7 + code6 + " \n");
+
+        // TODO 8. Вывод количества сотен, десятков и единиц числа
+
+        int num = 123;
+        int x = num % 1000 / 100; 
+        int y = num % 100 / 10;
+        int z = num % 10;
+        int sum1 = x + y+ z;
+        int composition = x * y* z;
+
+        System.out.println("Число 123 содержит: \n" + x + " - сотен");
+        System.out.println(y + " - десятков");
+        System.out.println(z + " - единиц");
+        System.out.println("Сумма его чисел = " + sum1);
+        System.out.println("Произведение = " + composition + '\n');
+
+        // TODO 9. Вывод времени
+
+        int secs = 86399; // количество секунд
+        int hour = secs / 3600;
+        int min = secs % 3600 / 60;
+        int sec =  secs % 60;
+
+        System.out.println( "Вывод времени 86399 секунд: " + hour + ":" + min + ":" + sec);
     }
  }
