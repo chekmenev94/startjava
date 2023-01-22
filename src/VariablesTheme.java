@@ -23,7 +23,7 @@ public class VariablesTheme {
 
         System.out.println("2. Расчет стоимости товара со скидкой");
         int pricePen = 100;
-        int priceBook = 200; 
+        int priceBook = 200;
         int sumPrice = pricePen + priceBook;
         int discountSum = sumPrice * 11 / 100;
         int discountPrice = sumPrice - discountSum;
@@ -41,30 +41,30 @@ public class VariablesTheme {
         byte maxByte = 127;
         System.out.println("Самое большое значение типа byte = " + maxByte);
         maxByte++;
-        System.out.println("Декременирую  byte +1 = " + maxByte);
+        System.out.println("После инкремента = " + maxByte);
         maxByte--;
-        System.out.println("Инкременирую byte -1 = " + maxByte);
+        System.out.println("После декремента = " + maxByte);
 
         short maxShort = 32_767;
         System.out.println("Самое большое значение типа short = " + maxShort);
         maxShort++;
-        System.out.println("Инкременирую short +1 = " + maxShort);
+        System.out.println("После инкремента = " + maxShort);
         maxShort--;
-        System.out.println("Декременирую  short -1 = " + maxShort);
+        System.out.println("После декремента = " + maxShort);
 
         int maxInt = 2_147_483_647;
         System.out.println("Самое большое значение типа int = " + maxInt);
         maxInt++;
-        System.out.println("Инкременирую int +1 = " + maxInt);
+        System.out.println("После инкремента = " + maxInt);
         maxInt--;
-        System.out.println("Декременирую  int -1 = " + maxInt);
+        System.out.println("После декремента = " + maxInt);
 
         long maxlong = 9_223_372_036_854_775_807l;
         System.out.println("Самое большое значение типа long = " + maxlong);
         maxlong++;
-        System.out.println("Инкременирую long +1 = " + maxlong);
+        System.out.println("После инкремента = " + maxlong);
         maxlong--;
-        System.out.println("Декременирую  long -1 = " + maxlong + '\n');
+        System.out.println("После декремента = " + maxlong + '\n');
 
         System.out.println("5. Перестановка значений");
         int a = 2, b = 5;
@@ -89,43 +89,42 @@ public class VariablesTheme {
 
         System.out.println("\n6. Вывод символов и их кодов");
         char octothorpe = '#';
-        char i = '&';
-        char dog = '@';
+        char and = '&';
+        char at = '@';
         char caret = '^';
-        char minus = '_';
+        char underLine = '_';
 
-        System.out.print("Код символа = " + (int) octothorpe);
-        System.out.println(" соответствующий символ = " + octothorpe);
-        System.out.println("Код символа = " + (int) i + ", соответствующий символ = " + i);
-        System.out.println("Код символа = " + (int) dog + ", соответствующий символ = " + dog);
-        System.out.println("Код символа = " + (int) caret + ", соответствующий символ = " + caret);
-        System.out.println("Код символа = " + (int) minus + ", соответствующий символ = " + minus);
+        System.out.println((int) octothorpe + " = " + octothorpe);
+        System.out.println((int) and + " = " + and);
+        System.out.println((int) at + " = " + at);
+        System.out.println((int) caret + " = " + caret);
+        System.out.println((int) underLine + " = " + underLine);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
         char backSlash = '\\';
-        char minus1 = '_';
+        char underLine1 = '_';
         char lBracket = '(';
         char rBracket = ')';
 
         System.out.println("    " + slash + backSlash + "    ");
         System.out.println("   " + slash + "  " + backSlash + "   ");
-        System.out.println("  " + slash + minus1 + lBracket + " " + rBracket + backSlash + "  ");
+        System.out.println("  " + slash + underLine1 + lBracket + " " + rBracket + backSlash + " ");
         System.out.println(" " + slash + "      " + backSlash + " ");
-        System.out.print(slash + "" + minus1 + minus1 + minus1);
-        System.out.println(minus1 + "" + slash  + backSlash + minus1 + minus1 + backSlash + " \n");
+        System.out.print(slash + "" + underLine1 + underLine1 + underLine1 + underLine1);
+        System.out.println(slash + "" + backSlash + underLine1 + underLine1 + backSlash + " \n");
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
         int num = 123;
-        int hundred = num / 100; 
-        int ten = num % 100 / 10;
-        int unit = num % 10;
-        int sum = hundred + ten + unit;
-        int multiplication = hundred * ten * unit;
+        int hundreds = num / 100; 
+        int tens = num / 10 % 10;
+        int ones = num % 10;
+        int sum = hundreds + tens + ones;
+        int multiplication = hundreds * tens * ones;
 
-        System.out.println("Число 123 содержит: \n" + hundred + " - сотен");
-        System.out.println(ten + " - десятков");
-        System.out.println(unit + " - единиц");
+        System.out.println("Число 123 содержит: \n" + hundreds + " - сотен");
+        System.out.println(tens + " - десятков");
+        System.out.println(ones + " - единиц");
         System.out.println("Сумма его чисел = " + sum);
         System.out.println("Произведение = " + multiplication + '\n');
 
