@@ -3,33 +3,33 @@ public class IfElseStatementTheme {
         System.out.println("1. Перевод псевдокода на язык Java");
         int age = 28;
         boolean isAgeMore = age - 20 != 0;
-        if(isAgeMore == true) {
+        if(isAgeMore) {
             System.out.println("Мой возраст " + age + " больше 20");
-        } else if(isAgeMore == false) {
+        } else {
             System.out.println("Мой возраст " + age + " меньше 20");
         }
 
         int sex = 1; // 1 - значение мужского пола, 0 - значение женского
         boolean isSexDetermination = sex == 1;
-        if(isSexDetermination == true) {
+        if(isSexDetermination) {
             System.out.println("Мужчина - защитник родины");
-        } else if(isSexDetermination == false) {
+        } else {
             System.out.println("Женщина - хранительница домашнего очага");
         }
 
         float height = 1.72f; // мой рост 172 см
         boolean isMyHeight = height >= 1.80;
-        if(isMyHeight == true) {
+        if(isMyHeight) {
             System.out.println("Мой рост - " + height + " > 1.80");
-        } else if(isMyHeight == false) {
+        } else {
             System.out.println("Мой рост - " + height + " < 1.80");
         }
 
         char firstLetter = "Ivan".charAt(0);
         boolean isFirstLetterName = firstLetter == 'M';
-        if(isFirstLetterName == true) {
+        if(isFirstLetterName) {
             System.out.println("В Имени Mikhail - первая буква " + firstLetter);
-        } else if(isFirstLetterName == false) {
+        } else {
             System.out.println("В Имени Ivan - первая буква " + firstLetter);
         }
 
@@ -38,9 +38,9 @@ public class IfElseStatementTheme {
         int num2 = 15;
         System.out.println("Max - " + num1 + " Min - " + num2);
         boolean comparison = num1 == num2;
-        if(comparison == true) {
+        if(comparison) {
             System.out.println("Число " + num1 + " равно числу " + num2);
-        } else if(comparison == false) {
+        } else {
             System.out.println("Число " + num1 + " > числа " + num2);
         }
 
@@ -49,15 +49,15 @@ public class IfElseStatementTheme {
         System.out.println("Проверка числа - " + num3);
         boolean b = num3 != 0;
         boolean isEvenNumber = num3 % 2 == 0;
-        if(isEvenNumber == true) {
+        if(isEvenNumber) {
             System.out.println("Число " + num3 + " является четным");
-        } else if(isEvenNumber == false) {
+        } else {
             System.out.println("Число " + num3 + " является нечетным");
         }
         boolean isPositiveNumber = num3 >= 0;
-        if(isPositiveNumber == true) {
+        if(isPositiveNumber) {
             System.out.println("Число " + num3 + " является положительным");
-        } else if(isPositiveNumber == false) {
+        } else {
             System.out.println("Число " + num3 + " является отрицательным");
         }
 
@@ -68,25 +68,25 @@ public class IfElseStatementTheme {
         int hundred = num4 / 100;
         int hundred1 = num5 / 100;
         boolean digitMatch = hundred - hundred1 == 0;
-        if(digitMatch == true) {
+        if(digitMatch) {
             System.out.println("Сотни исходных чисел: " + hundred + " = " + hundred1 + " равны");
-        } else if(digitMatch == false) {
+        } else {
             System.out.println("Сотни исходных чисел: " + hundred + " и " + hundred1 + " не равны");
         }
         int ten = num4 % 100 / 10;
         int ten1 = num5 % 100 / 10;
         boolean digitMatch1 = ten - ten1 == 0;
-        if(digitMatch1 == true) {
+        if(digitMatch1) {
             System.out.println("Десятки исходных чисел: " + ten + " = " + ten1 + " равны");
-        } else if(digitMatch1 == false) {
+        } else {
             System.out.println("Десятки исходных чисел: " + ten + " и " + ten1 + " не равны");
         }
         int unit = num4 % 10;
         int unit1 = num5 % 10;
         boolean digitMatch2 = unit - unit1 == 0;
-        if(digitMatch2 == true) {
+        if(digitMatch2) {
             System.out.println("Единицы исходных чисел: " + unit + " = " + unit1 + " равны");
-        } else if(digitMatch2 == false) {
+        } else {
             System.out.println("Единицы исходных чисел: " + unit + " и " + unit1 + " не равны");
         }
 
@@ -94,21 +94,21 @@ public class IfElseStatementTheme {
         char ch = '\u0057';
         System.out.println("Символ кода " + (int) ch + " = " + ch);
         boolean isSmallLetter = ch =='w';
-        if(isSmallLetter == true) {
+        if(isSmallLetter) {
             System.out.println(ch + "- маленькая буква");
-        } else if(isSmallLetter == false) {
+        } else {
             System.out.println(ch + "- Большая буква");
         }
         boolean isNumber = ch =='1';
-        if(isNumber == true) {
+        if(isNumber) {
             System.out.println(ch + "- является числом");
-        } else if(isNumber == false) {
+        } else {
             System.out.println(ch + "- не является числом");
         }
         boolean isDefinition = ch =='W';
-        if(isDefinition == true) {
+        if(isDefinition) {
             System.out.println(ch + "- буква, а не число");
-        } else if(isDefinition == false) {
+        } else {
             System.out.println(ch + "- число, а не буква");
         }
 
@@ -120,7 +120,7 @@ public class IfElseStatementTheme {
             long totalDeposit = deposit + income;
             System.out.println("Начисленный процент 5%: " + income + " руб");
             System.out.println("Итоговая сумма с 5%: " + totalDeposit + " руб");
-        } else if(deposit >= 100_000 && deposit <= 299_999) {
+        } else if(deposit >= 100_000 && deposit < 300_000) {
             long income1 = deposit * 7 / 100;
             long totalDeposit1 = deposit + income1;
             System.out.println("Начисленный процент 7%: " + income1 + " руб");
@@ -142,7 +142,7 @@ public class IfElseStatementTheme {
             System.out.println("Балл по истории: " + history + " - Оценка " + scoreTwo);
         } else if(history >= 60 && history <= 73) {
             System.out.println("Балл по истории: " + history + " - Оценка " + scoreThree);
-        } else if(history >= 73 && history <= 90) {
+        } else if(history >= 73 && history < 91) {
             System.out.println("Балл по истории: " + history + " - Оценка " + scoreFour);
         } else if(history >= 91) {
             System.out.println("Балл по истории: " + history + " - Оценка " + scoreFive);
@@ -152,7 +152,7 @@ public class IfElseStatementTheme {
             System.out.println("Балл по программированию: " + prog + " - Оценка " + scoreTwo);
         } else if(prog >= 60 && prog <= 73) {
             System.out.println("Балл по программированию: " + prog + " - Оценка "+ scoreThree);
-        } else if(prog >= 73 && prog <= 90) {
+        } else if(prog >= 73 && prog < 91) {
             System.out.println("Балл по программированию: " + prog + " - Оценка " + scoreFour);
         } else if(prog >= 91) {
             System.out.println("Балл по программированию: " + prog + " - Оценка " + scoreFive);
@@ -179,7 +179,7 @@ public class IfElseStatementTheme {
         long hundred2 = sum / 100;
         if(hundred2 <= nominalHundred) {
             System.out.println("Выдача банкнот номиналом 100 = " + hundred2 + " банкнот");
-        } else if(hundred2 >= nominalHundred) {
+        } else {
             long supplement = (hundred2 - nominalHundred) * 10;
             System.out.print("Выдача банкнот номиналом 100 = " + nominalHundred + " банкнот");
             System.out.println("Выдача банкнот номиналом 10 = " + supplement + " банкнот");
@@ -187,7 +187,7 @@ public class IfElseStatementTheme {
         long ten2 = sum % 100 / 10;
         if(ten2 <= nominalTen) {
             System.out.println("Выдача банкнот номиналом 10 = " + ten2 + " банкнот");
-        } else if(ten2 >= nominalTen) {
+        } else {
             long supplement1 = (ten2 - nominalTen) * 10;
             System.out.print("Выдача банкнот номиналом 10 = " + nominalTen + " банкнот");
             System.out.println(" + выдача банкнот номиналом 1 = " + supplement1 + " банкнот");
@@ -195,7 +195,7 @@ public class IfElseStatementTheme {
         long unit2 = sum % 10;
         if(unit2 <= nominalUnit) {
             System.out.println("Выдача банкнот номиналом 1 = " + unit2 + " банкнот");
-        } else if(unit2 >= nominalUnit) {
+        } else {
             System.out.print("Банкнот не хватает для выдачи нужной суммы: " + sum);
         }
     }
