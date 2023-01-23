@@ -75,9 +75,9 @@ public class VariablesTheme {
         System.out.println("Способ перестановки переменных 1.С помощью ввода новой");
         System.out.println("a = " + a + "; b = " + b);
 
-        a = a + b;
+        a += b;
         b = a - b;
-        a = a - b;
+        a -= b;
         System.out.println("Способ перестановки переменных 2.Арифметических операций");
         System.out.println("a = " + a + "; b = " + b);
 
