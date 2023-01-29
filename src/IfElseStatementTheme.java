@@ -2,60 +2,54 @@ public class IfElseStatementTheme {
     public static void main (String [] args) {
         System.out.println("1. Перевод псевдокода на язык Java");
         int age = 28;
-        boolean isAgeMore = age - 20 != 0;
-        if(isAgeMore) {
+        if(age > 20) {
             System.out.println("Мой возраст " + age + " больше 20");
-        } else {
+        } else if(age < 20) {
             System.out.println("Мой возраст " + age + " меньше 20");
         }
 
         int sex = 1; // 1 - значение мужского пола, 0 - значение женского
-        boolean isSexDetermination = sex == 1;
-        if(isSexDetermination) {
+        if(sex == 1) {
             System.out.println("Мужчина - защитник родины");
         } else {
             System.out.println("Женщина - хранительница домашнего очага");
         }
 
         float height = 1.72f; // мой рост 172 см
-        boolean isMyHeight = height >= 1.80;
-        if(isMyHeight) {
+        if(height > 1.80) {
             System.out.println("Мой рост - " + height + " > 1.80");
-        } else {
+        } else if(height < 1.80) {
             System.out.println("Мой рост - " + height + " < 1.80");
         }
 
         char firstLetter = "Ivan".charAt(0);
-        boolean isFirstLetterName = firstLetter == 'M';
-        if(isFirstLetterName) {
+        if(firstLetter == 'M') {
             System.out.println("В Имени Mikhail - первая буква " + firstLetter);
-        } else {
+        } else if(firstLetter == 'I') {
             System.out.println("В Имени Ivan - первая буква " + firstLetter);
         }
 
         System.out.println("\n2. Поиск max и min числа");
         int num1 = 120;
         int num2 = 15;
-        System.out.println("Max - " + num1 + " Min - " + num2);
-        boolean comparison = num1 == num2;
-        if(comparison) {
+        if(num1 == num2) {
             System.out.println("Число " + num1 + " равно числу " + num2);
-        } else {
+        } else if(num1 > num2) {
             System.out.println("Число " + num1 + " > числа " + num2);
+            System.out.println("Max - " + num1 + " Min - " + num2);
+        } else if(num1 < num2) {
+            System.out.println("Число " + num1 + " < числа " + num2);
+            System.out.println("Max - " + num2 + " Min - " + num1);
         }
 
         System.out.println("\n3. Проверка числа");
         int num3 = 88;
         System.out.println("Проверка числа - " + num3);
-        boolean b = num3 != 0;
-        boolean isEvenNumber = num3 % 2 == 0;
-        if(isEvenNumber) {
+        if(num3 % 2 == 0) {
             System.out.println("Число " + num3 + " является четным");
         } else {
             System.out.println("Число " + num3 + " является нечетным");
-        }
-        boolean isPositiveNumber = num3 >= 0;
-        if(isPositiveNumber) {
+        } if(num3 > 0) {
             System.out.println("Число " + num3 + " является положительным");
         } else {
             System.out.println("Число " + num3 + " является отрицательным");
@@ -67,99 +61,94 @@ public class IfElseStatementTheme {
         System.out.println("Исходные числа: первое число - " + num4 + ", второе число - " + num5);
         int hundred = num4 / 100;
         int hundred1 = num5 / 100;
-        boolean digitMatch = hundred - hundred1 == 0;
-        if(digitMatch) {
+        if(hundred == hundred1) {
             System.out.println("Сотни исходных чисел: " + hundred + " = " + hundred1 + " равны");
         } else {
             System.out.println("Сотни исходных чисел: " + hundred + " и " + hundred1 + " не равны");
         }
         int ten = num4 % 100 / 10;
         int ten1 = num5 % 100 / 10;
-        boolean digitMatch1 = ten - ten1 == 0;
-        if(digitMatch1) {
+        if(ten == ten1) {
             System.out.println("Десятки исходных чисел: " + ten + " = " + ten1 + " равны");
         } else {
             System.out.println("Десятки исходных чисел: " + ten + " и " + ten1 + " не равны");
         }
-        int unit = num4 % 10;
-        int unit1 = num5 % 10;
-        boolean digitMatch2 = unit - unit1 == 0;
-        if(digitMatch2) {
-            System.out.println("Единицы исходных чисел: " + unit + " = " + unit1 + " равны");
+        int ones = num4 % 10;
+        int ones1 = num5 % 10;
+        if(ones == ones1) {
+            System.out.println("Единицы исходных чисел: " + ones + " = " + ones1 + " равны");
         } else {
-            System.out.println("Единицы исходных чисел: " + unit + " и " + unit1 + " не равны");
+            System.out.println("Единицы исходных чисел: " + ones + " и " + ones1 + " не равны");
+        }
+        if(hundred != hundred1 && ten != ten1 && ones != ones1) {
+            System.out.println("Равных цифр в числах нет");
         }
 
         System.out.println("\n5. Определение символа по его коду");
         char ch = '\u0057';
         System.out.println("Символ кода " + (int) ch + " = " + ch);
-        boolean isSmallLetter = ch =='w';
-        if(isSmallLetter) {
+        if(ch == 'w') {
             System.out.println(ch + "- маленькая буква");
-        } else {
+        } else if(ch == 'W') {
             System.out.println(ch + "- Большая буква");
-        }
-        boolean isNumber = ch =='1';
-        if(isNumber) {
+        } else if(ch == '1') {
             System.out.println(ch + "- является числом");
         } else {
-            System.out.println(ch + "- не является числом");
-        }
-        boolean isDefinition = ch =='W';
-        if(isDefinition) {
-            System.out.println(ch + "- буква, а не число");
-        } else {
-            System.out.println(ch + "- число, а не буква");
+            System.out.println(ch + "- не буква, и не число");
         }
 
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         long deposit = 300_000;
+        long income = 0;
+        long totalDeposit = 0;
         System.out.println("Сумма вклада = " + deposit + " рублей");
         if(deposit <= 100_000) {
-            long income = deposit * 5 / 100;
-            long totalDeposit = deposit + income;
+            income = deposit * 5 / 100;
+            totalDeposit = deposit + income;
             System.out.println("Начисленный процент 5%: " + income + " руб");
             System.out.println("Итоговая сумма с 5%: " + totalDeposit + " руб");
         } else if(deposit >= 100_000 && deposit < 300_000) {
-            long income1 = deposit * 7 / 100;
-            long totalDeposit1 = deposit + income1;
-            System.out.println("Начисленный процент 7%: " + income1 + " руб");
-            System.out.println("Итоговая сумма с 7%: " + totalDeposit1 + " руб");
+            income = deposit * 7 / 100;
+            totalDeposit = deposit + income;
+            System.out.println("Начисленный процент 7%: " + income + " руб");
+            System.out.println("Итоговая сумма с 7%: " + totalDeposit + " руб");
         } else if(deposit >= 300_000) {
-            long income2 = deposit * 10 / 100;
-            long totalDeposit2 = deposit + income2;
-            System.out.println("Начисленный процент 10%: " + income2 + " руб");
-            System.out.println("Итоговая сумма с 10%: " + totalDeposit2 + " руб");
+            income = deposit * 10 / 100;
+            totalDeposit = deposit + income;
+            System.out.println("Начисленный процент 10%: " + income + " руб");
+            System.out.println("Итоговая сумма с 10%: " + totalDeposit + " руб");
         }
 
         System.out.println("\n7. Определение оценки по предметам");
-        int history = 59;
-        int scoreTwo = 2;
-        int scoreThree = 3;
-        int scoreFour = 4;
-        int scoreFive = 5;
-        if(history <= 60) {
-            System.out.println("Балл по истории: " + history + " - Оценка " + scoreTwo);
-        } else if(history >= 60 && history <= 73) {
-            System.out.println("Балл по истории: " + history + " - Оценка " + scoreThree);
-        } else if(history >= 73 && history < 91) {
-            System.out.println("Балл по истории: " + history + " - Оценка " + scoreFour);
-        } else if(history >= 91) {
-            System.out.println("Балл по истории: " + history + " - Оценка " + scoreFive);
+        int percentHistory = 59;
+        int percentProg = 91;
+        int scoreHistory = 0;
+        int scoreProg = 0;
+
+        if(percentHistory <= 60) {
+            scoreHistory = 2;
+        } else if(percentHistory >= 60 && percentHistory <= 73) {
+            scoreHistory = 3;
+        } else if(percentHistory >= 73 && percentHistory < 91) {
+            scoreHistory = 4;
+        } else if(percentHistory >= 91) {
+            scoreHistory = 5;
         }
-        int prog = 91;
-        if(prog <= 60) {
-            System.out.println("Балл по программированию: " + prog + " - Оценка " + scoreTwo);
-        } else if(prog >= 60 && prog <= 73) {
-            System.out.println("Балл по программированию: " + prog + " - Оценка "+ scoreThree);
-        } else if(prog >= 73 && prog < 91) {
-            System.out.println("Балл по программированию: " + prog + " - Оценка " + scoreFour);
-        } else if(prog >= 91) {
-            System.out.println("Балл по программированию: " + prog + " - Оценка " + scoreFive);
+        System.out.println(scoreHistory + " - оценка по Истории");
+
+        if(percentProg <= 60) {
+            scoreProg = 2;
+        } else if(percentProg >= 60 && percentProg <= 73) {
+            scoreProg = 3;
+        } else if(percentProg >= 73 && percentProg < 91) {
+            scoreProg = 4;
+        } else if(percentProg >= 91) {
+            scoreProg = 5;
         }
-        float averageScore = (2 + 5) / 2f;
+        System.out.println(scoreProg + " - оценка по Программированию");
+        float averageScore = (scoreHistory + scoreProg) / 2f;
         System.out.println("Средняя оценка " + averageScore);
-        int averagePercent = (history + prog) / 2;
+        int averagePercent = (percentHistory + percentProg) / 2;
         System.out.println("Средняя процент " + averagePercent);
 
         System.out.println("\n8. Расчет прибыли за год");
@@ -167,7 +156,11 @@ public class IfElseStatementTheme {
         long revenue = 13_000;
         long costPrice = 9_000;
         long annualProfit = (revenue - costPrice - roomConsumption) * 12;
-        System.out.println("Годовая прибыль = " + annualProfit);
+        if(annualProfit > 0) {
+            System.out.println("Годовая прибыль = +" + annualProfit);
+        } else {
+            System.out.println("Годовая прибыль = " + annualProfit);
+        }
 
         System.out.println("\n9. Подсчет количества банкнот");
         long sum = 567;
