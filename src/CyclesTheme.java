@@ -84,13 +84,12 @@ public class CyclesTheme {
 
         System.out.println("4. Вывод чисел на консоль в несколько строк");
 
-        for(int x = 1; x <= 24; x += 2) {
-            if (x >1 && x <= 11) {
-                System.out.printf("%d", x);
-            } else if (x > 11 && x <= 21) {
-                System.out.printf("%d", x);
+        for(int x = 2; x <= 24; x += 10) {
+
+            for(int x1 = x; x1 < x + 10 && x1 <= 24; x1+=2 ) {
+                System.out.printf("%+1d", x1);
             }
-            System.out.println();
+            System.out.printf();
         }
         
         System.out.println("\n5. Проверка количества двоек на четность/нечетность");
@@ -115,21 +114,56 @@ public class CyclesTheme {
 
         System.out.println("6. Отображение фигур в консоли");
 
-        int r = 5;
-        for( int i2 = 0; i2 < r; i2++) {
-            for (int j2 = i2; j2 < r; j2++) {
-                System.out.print("#");
+        for( int i1 = 0; i1 < 5; i1++) {
+            for (int j1 = 0; j1 < 10; j1++) {
+                System.out.print("*");
             }
             System.out.println();
         }
-        for( int i1 = 0; i1 < r; i1++) {
-            for (int j1 = -4; j1 < r; j1++) {
-                System.out.print("*");
+        int i2 = 0;
+        while(i2 < 5) {
+            int j2 = i2;
+            while (j2 < 5) {
+                System.out.print("#");
+                j2++;
             }
-            System.out.println("*");
+            System.out.println();
+            i2++;
         }
-        
-        
+        int countLine = 5; //Скольк строк вывести
+        int sizeMaxLine = 3; //Максимальное количество символов
+        String symbol = "$"; //Символ, который выводим
+        int countShowLines = 0; //Начальная строка
+        boolean isIncrement = true; //Увеличивать или уменьшать значения
+
+        do {
+            if (isIncrement) {
+                for (int i3 = 1; i3 <=sizeMaxLine; i3++) {
+                    String str = symbolEqualsOnNumber(symbol,i3);
+                    System.out.println(str);
+                    countShowLines++;
+                }
+            } else if (!isIncrement) {
+                for (int y = sizeMaxLine-1; y>0; y--){
+                    String str = symbolEqualsOnNumber(symbol,y);
+                    System.out.println(str);
+                    countShowLines++;
+                }
+            }
+
+            if (countShowLines == sizeMaxLine) {
+                isIncrement = false;
+            }
+        }while (countShowLines != countLine);
+    }
+
+    public static String symbolEqualsOnNumber(String symbol,int count){
+        String result="";
+        while (count!=0){
+            result=result+symbol;
+            count--;
+        }
+        return result;
     }
 }
 

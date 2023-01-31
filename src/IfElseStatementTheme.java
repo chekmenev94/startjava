@@ -104,20 +104,15 @@ public class IfElseStatementTheme {
         System.out.println("Сумма вклада = " + deposit + " рублей");
         if(deposit <= 100_000) {
             income = deposit * 5 / 100;
-            totalDeposit = deposit + income;
-            System.out.println("Начисленный процент 5%: " + income + " руб");
-            System.out.println("Итоговая сумма с 5%: " + totalDeposit + " руб");
         } else if(deposit >= 100_000 && deposit < 300_000) {
             income = deposit * 7 / 100;
-            totalDeposit = deposit + income;
-            System.out.println("Начисленный процент 7%: " + income + " руб");
-            System.out.println("Итоговая сумма с 7%: " + totalDeposit + " руб");
         } else if(deposit >= 300_000) {
             income = deposit * 10 / 100;
-            totalDeposit = deposit + income;
-            System.out.println("Начисленный процент 10%: " + income + " руб");
-            System.out.println("Итоговая сумма с 10%: " + totalDeposit + " руб");
         }
+        totalDeposit = deposit + income;
+        System.out.println("Начисленный процент: " + income + " руб");
+        System.out.println("Итоговая сумма с %: " + totalDeposit + " руб");
+        
 
         System.out.println("\n7. Определение оценки по предметам");
         int percentHistory = 59;
@@ -149,7 +144,7 @@ public class IfElseStatementTheme {
         float averageScore = (scoreHistory + scoreProg) / 2f;
         System.out.println("Средняя оценка " + averageScore);
         int averagePercent = (percentHistory + percentProg) / 2;
-        System.out.println("Средняя процент " + averagePercent);
+        System.out.println("Средний процент " + averagePercent);
 
         System.out.println("\n8. Расчет прибыли за год");
         long roomConsumption = 5_000;
