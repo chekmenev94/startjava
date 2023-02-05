@@ -89,7 +89,7 @@ public class CyclesTheme {
             for(int x1 = x; x1 < x + 10 && x1 <= 24; x1+=2 ) {
                 System.out.printf("%+1d", x1);
             }
-            System.out.printf();
+            System.out.println();
         }
         
         System.out.println("\n5. Проверка количества двоек на четность/нечетность");
@@ -111,6 +111,18 @@ public class CyclesTheme {
         } else {
             System.out.println("Число " + num2 + " содержит " + quantity + " (нечетное) количество 2");
         }
+        System.out.println("7. Отображение ASCII-символов");
+
+        for(char ch3 = 1; ch3<=47; ch3+=2) {
+            
+        System.out.println(ch3);
+        }
+
+
+
+
+
+
 
         System.out.println("6. Отображение фигур в консоли");
 
