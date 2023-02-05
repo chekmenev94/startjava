@@ -87,7 +87,7 @@ public class CyclesTheme {
         for(int x = 2; x <= 24; x += 10) {
 
             for(int x1 = x; x1 < x + 10 && x1 <= 24; x1+=2 ) {
-                System.out.printf("%+1d", x1);
+                System.out.printf("%3d", x1);
             }
             System.out.println();
         }
@@ -97,7 +97,7 @@ public class CyclesTheme {
         long k = 100000;
         long result2 = 0;
         long sum = 0;
-        long quantity;
+        long quantity = 0;
         while(k > 0) {
             result2 = num2 / k % 10;
             if(result2 == 2 ) {
@@ -111,18 +111,6 @@ public class CyclesTheme {
         } else {
             System.out.println("Число " + num2 + " содержит " + quantity + " (нечетное) количество 2");
         }
-        System.out.println("7. Отображение ASCII-символов");
-
-        for(char ch3 = 1; ch3<=47; ch3+=2) {
-            
-        System.out.println(ch3);
-        }
-
-
-
-
-
-
 
         System.out.println("6. Отображение фигур в консоли");
 
@@ -132,6 +120,7 @@ public class CyclesTheme {
             }
             System.out.println();
         }
+
         int i2 = 0;
         while(i2 < 5) {
             int j2 = i2;
@@ -142,40 +131,79 @@ public class CyclesTheme {
             System.out.println();
             i2++;
         }
-        int countLine = 5; //Скольк строк вывести
-        int sizeMaxLine = 3; //Максимальное количество символов
-        String symbol = "$"; //Символ, который выводим
-        int countShowLines = 0; //Начальная строка
-        boolean isIncrement = true; //Увеличивать или уменьшать значения
-
+        int i3 = 3;
+        int i4 = 3;
         do {
-            if (isIncrement) {
-                for (int i3 = 1; i3 <=sizeMaxLine; i3++) {
-                    String str = symbolEqualsOnNumber(symbol,i3);
-                    System.out.println(str);
-                    countShowLines++;
-                }
-            } else if (!isIncrement) {
-                for (int y = sizeMaxLine-1; y>0; y--){
-                    String str = symbolEqualsOnNumber(symbol,y);
-                    System.out.println(str);
-                    countShowLines++;
-                }
+            for(int j = i3; j <=3; j++) {
+                System.out.print("$");
             }
-
-            if (countShowLines == sizeMaxLine) {
-                isIncrement = false;
+            System.out.println();
+            i3--;
+        }while(i3 > 0);
+        do {
+            for(int j1 = i4-1; j1 > 0; j1--) {
+                System.out.print("$");
             }
-        }while (countShowLines != countLine);
-    }
+            System.out.println();
+            i4--;
+        }while(i4 > 0);
 
-    public static String symbolEqualsOnNumber(String symbol,int count){
-        String result="";
-        while (count!=0){
-            result=result+symbol;
-            count--;
+        System.out.println("7. Отображение ASCII-символов");
+        System.out.println("Dec" + "\t" + "Char");
+        for(char ch3 = 98; ch3 <= 122; ch3+=2) {
+            System.out.println((int) ch3 + "\t" + ch3);
         }
-        return result;
+        for(char ch4 = 1; ch4 <= 47; ch4+=2) {
+            System.out.println((int) ch4 + "\t" + ch4);
+        }
+
+        System.out.println("\n8. Проверка, является ли число палиндромом");
+        int num3 = 1234321;
+        int numCopy = num3;
+        int reverseNumInt = 0;
+        while(numCopy != 0) {
+            reverseNumInt = reverseNumInt * 10 + numCopy % 10;
+            numCopy /= 10;
+        }
+        System.out.println(reverseNumInt);
+        if(reverseNumInt == num3) {
+            System.out.println("Число " + num3 + " является палиндромом");
+        }else {
+            System.out.println("Число " + num3 + " не является палиндромом");
+        }
+        System.out.println("\n9. Определение, является ли число счастливым");
+        int num4 = 123321;
+        int sumRight = 0;
+        int sumLeft = 0;
+
+        int rightSideNum4 = num4 / 1000;
+        System.out.print("Сумма левой части числа "  + rightSideNum4);
+        while (rightSideNum4 !=0) {
+            sumRight = sumRight + rightSideNum4 % 10;
+            rightSideNum4 /=10;
+        }
+        System.out.println(" = " + sumRight);
+
+        int leftSideNum4 = num4 % 1000;
+        System.out.print("Сумма правой части числа "  + leftSideNum4);
+        while (leftSideNum4 !=0) {
+            sumLeft = sumLeft + leftSideNum4 % 10;
+            leftSideNum4 /=10;
+        }
+        System.out.println(" = " +sumLeft);
+        if(sumRight == sumLeft) {
+            System.out.println("Число счастливое");
+        } else {
+            System.out.println("Число не счастливое");
+        }
+        System.out.println("\n10. Вывод таблицы умножения Пифагора");
+        for (int i6 = 1; i6 < 10; i6++) {
+            for (int j6 = 1; j6 < 10; j6++) {
+                System.out.printf("%3d", i6 * j6);
+            }
+            System.out.print("\n");
+        }
+    
     }
 }
 
