@@ -8,7 +8,7 @@ public class CyclesTheme {
             if (counter % 2 == 0) {
                 sumEvenNumbers += counter;
             } else {
-            sumOddNumbers += counter;
+                sumOddNumbers += counter;
             }
             counter++;
         } while (counter <= 21);
@@ -16,75 +16,59 @@ public class CyclesTheme {
         System.out.println("; сумма нечетных = " + sumOddNumbers);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания");
-        int a = 10;
-        int b = 5;
+        int max = 10;
+        int min = 5;
         int c = -1;
-        int maxNum = 0;
-        int minNum = 0;
-        if (a > b && a > c) {
-            maxNum = a;
-        } else if (a < b && a < c) {
-            minNum = a;
+        if (c > max && c > min) {
+            max = c;
+        } else if (c < min && c < max) {
+            min = c;
         }
-        if (b > a && b > c) {
-            maxNum = b;
-        } else if (b < a && b < c) {
-            minNum = b;
+        if (min > max && min > c) {
+            max = min;
+        } else if (max < min && max < c) {
+            min = max;
         }
-        if (c > a && c > b) {
-            maxNum = c;
-        } else if (c < a && c < b) {
-            minNum = c;
-        }
-        for (int i = maxNum; i >= minNum; i--) {
+        for (int i = max-1; i > min; i--) {
             System.out.print(i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
-        long num1 = 1234;
-        long i1 = 1;
+        long num = 1234;
         long numRewers = 0;
-        long numSum = 0;
-        while (i1 <= 1000) {
-            numRewers = num1 / i1 % 10;
-            numSum += numRewers;
+        long sumDigits = 0;
+        while (num > 0) {
+            numRewers = num % 10;
+            sumDigits += numRewers;
             System.out.print(numRewers);
-            i1 *=10;
+            num /= 10;
         }
-        System.out.println("\nСумма цифр " + numSum);
+        System.out.println("\nСумма цифр " + sumDigits);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
-        for (int j = 1; j <= 31; j+=10) {
-            for (int i2 = j; i2 < 10; i2+=2) {
-                System.out.printf("%3d", i2);
-            }
-            for (int i2 = j; i2 > 10 && i2 < 20; i2+=2) {
-                System.out.printf("%3d", i2);
-            }
-            for (int i2 = j; i2 > 20 && i2 < 24; i2+=2) {
-                System.out.printf("%3d", i2);
+        for (int i1 = 1; i1 < 24; i1+=10) {
+            for (int j = i1; j < i1 + 10 && j < 24; j+=2) {
+                System.out.printf("%3d", j);
             }
             System.out.println();
         }
 
         System.out.println("5. Проверка количества двоек на четность/нечетность");
         long num2 = 3_242_592;
-        long num3 = num2;
-        int k = 0;
+        long copyNum2 = num2;
         long result = 0;
         long countTwos = 0;
-        while (k < 7) {
-            result = num3 % 10;
-            num3 /= 10;
+        while (copyNum2 > 0) {
+            result = copyNum2 % 10;
             if (result == 2) {
-                countTwos += result / 2;
+                countTwos++;
             }
-            k++;
+            copyNum2 /=10;
         }
         if (countTwos % 2 == 0) {
             System.out.println("Число " + num2 + " содержит " + countTwos + " четное количество 2");
         } else {
-            System.out.println("Число " + num2 + " содержит " + countTwos + " не четное количество 2");
+            System.out.println("Число " + num2 + " содержит " + countTwos + " 'нечетное' количество 2");
         }
 
         System.out.println("\n6. Отображение фигур в консоли");
