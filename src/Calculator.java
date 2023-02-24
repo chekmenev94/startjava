@@ -2,7 +2,7 @@ public class Calculator {
     public static void main(String[] args) {
         int a = 10;
         int b = 5;
-        char sign = '*';
+        char sign = '^';
         int result = 0;
         if (sign == '+') {
             result = a + b;
@@ -15,7 +15,7 @@ public class Calculator {
         } else if (sign == '^') {
             result = 1;
             for(int i = 1; i <= b; i++) {
-                result = result * a;
+                result *= a;
             }
         } else if (sign == '%') {
             result = a % b;
