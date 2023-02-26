@@ -21,15 +21,15 @@ public class CyclesTheme {
         int c = -1;
         int max = b;
         int min = a;
-        if (a > max && a > c) {
+        if (a > max) {
             max = a;
         }
-        if (b < min && b < c) {
-            min = b;
-        }
-        if (c > max && c > a) {
+        if (c > max) {
             max = c;
-        } else if (c < min && c < b) {
+        } else if (c < min) {
+            min = c;
+        }
+        if (b < min) {
             min = c;
         }
         for (int i = max-1; i > min; i--) {
@@ -49,17 +49,16 @@ public class CyclesTheme {
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int counter1 = 1;
-        for (int i1 = 1; i1 < 24; i1+=2) {
-            System.out.printf("%3d", i1);
+        for (int i = 1; i < 24; i+=2) {
+            System.out.printf("%3d", i);
             if (counter1++ == 5) {
-            System.out.println();
-            counter1 -= 5;
+                System.out.println();
+                counter1 = 1;
             }
-        }    
-        for (int j = counter1; j <= 5; j++) {
-            System.out.print("  " + 0);
         }
-        
+        for (int j = counter1; j <= 5; j++) {
+            System.out.printf("%3d", 0);
+        }
 
         System.out.println("\n\n5. Проверка количества двоек на четность/нечетность");
         int num2 = 3_242_592;
@@ -78,8 +77,8 @@ public class CyclesTheme {
         }
 
         System.out.println("\n6. Отображение фигур в консоли");
-        for ( int i3 = 0; i3 < 5; i3++) {
-            for (int j1 = 0; j1 < 10; j1++) {
+        for ( int i = 0; i < 5; i++) {
+            for (int j = 0; j < 10; j++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -167,19 +166,24 @@ public class CyclesTheme {
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");
         for (int i7 = 1; i7 < 10; i7++) {
-            if (i7 == 1) {
-                System.out.println("  1|  2  3  4  5  6  7  8  9");
-                System.out.print("  -|------------------------");
-            } else {
-                for (int j5 = 1; j5 < 10; j5++) {
-                    if (j5 == 2) {
-                        System.out.printf( "|" +  "%3d", i7 * j5);
-                    } else {
-                        System.out.printf("%3d", i7 * j5);
-                    }
+            for (int j5 = 1; j5 < 10; j5++) {
+                if (j5 == 2) {
+                    System.out.printf( "|" +  "%3d", i7 * j5);
+                } else {
+                    System.out.printf("%3d", i7 * j5);
                 }
             }
             System.out.println();
+            if (i7 == 1) {
+                for (int j = 1; j < 10; j++) {
+                    if (j == 2) {
+                        System.out.printf( "|" +  "%3s", "-");
+                    } else {
+                        System.out.printf("%3s", "-");
+                    }
+                }
+                System.out.println();
+            }
         }
     }
 }
