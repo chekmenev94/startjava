@@ -2,18 +2,18 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
         int counter = -10;
-        long sumEvenNumbers = 0;
-        long sumOddNumbers = 0;
+        long sumEvenNums = 0;
+        long sumOddNums = 0;
         do {
             if (counter % 2 == 0) {
-                sumEvenNumbers += counter;
+                sumEvenNums += counter;
             } else {
-                sumOddNumbers += counter;
+                sumOddNums += counter;
             }
             counter++;
         } while (counter <= 21);
-        System.out.print("В промежутке [-10; 21] сумма четных = " + sumEvenNumbers);
-        System.out.println("; сумма нечетных = " + sumOddNumbers);
+        System.out.print("В промежутке [-10; 21] сумма четных = " + sumEvenNums);
+        System.out.println("; сумма нечетных = " + sumOddNums);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания");
         int a = 10;
@@ -56,13 +56,13 @@ public class CyclesTheme {
                 counter1 = 1;
             }
         }
-        if (counter1 > 1 ) {
-            for (int j = counter1; j <= 5; j++) {
+        if (counter1 > 1) {
+            for (int i = counter1; i <= 5; i++) {
                 System.out.printf("%3d", 0);
             }
         }
 
-        System.out.println("\n\n5. Проверка количества двоек на четность/нечетность");
+        System.out.println("\n5. Проверка количества двоек на четность/нечетность");
         int num2 = 3_242_592;
         int copyNum2 = num2;
         int countTwos = 0;
@@ -87,51 +87,45 @@ public class CyclesTheme {
         }
         System.out.println();
 
-        int line = 0;
-        while (line < 5) {
-            int symbol = line;
-            while (symbol < 5) {
+        int countRows = 1;
+        while (countRows < 6) {
+            int countColumn = countRows;
+            while (countColumn < 6) {
                 System.out.print("#");
-                symbol++;
+                countColumn++;
             }
             System.out.println();
-            line++;
+            countRows++;
         }
         System.out.println();
 
-        int line2 = 1;
-         do {
-            if (line2 < 4) {
-                for (int j = line2; j > 0; j--) {
-                    System.out.print("$");
-                }
-            } else {
-                for (int k = 6; k > line2; k--) {
-                    System.out.print("$");
-                }
-            }
+        countRows = 1;
+        do {
+            int countColumn = 1;
+            do {
+                System.out.print("$");
+                countColumn++;
+            } while (countColumn <= countRows && countColumn + countRows <= 6);
             System.out.println();
-            line2++;
-         } while (line2 < 6);
+            countRows++;
+         } while (countRows < 6);
 
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.println("Dec" + "\t" + "Char");
         for (int i = 1; i <= 47; i += 2) {
-            char ch = (char) i;
-            System.out.printf("%3d %8s%n", i, ch);
+            System.out.printf("%3d %8s%n", i, (char) i);
         }
         for (int i = 98; i <= 122; i += 2) {
-            char ch = (char) i;
-            System.out.printf("%3d %8s%n", i, ch);
+            System.out.printf("%3d %8s%n", i, (char) i);
         }
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
         int num3 = 1234321;
-        int numCopy = num3;
+        int copyNum3 = num3;
         int reverseNum3 = 0;
-        while (numCopy > 0) {
-            reverseNum3 = reverseNum3 * 10 + numCopy % 10;
-            numCopy /= 10;
+        while (copyNum3 > 0) {
+            reverseNum3 = reverseNum3 * 10 + copyNum3 % 10;
+            copyNum3 /= 10;
         }
         System.out.println(reverseNum3);
         if (reverseNum3 == num3) {
@@ -149,9 +143,9 @@ public class CyclesTheme {
         int rightHalfNum4 = num4 % 1000;
         while (num4 > 0) {
             if (counter2++ < 3) {
-                sumRight = sumRight + num4 % 10;
+                sumRight += num4 % 10;
             } else {
-                sumLeft = sumLeft + num4 % 10;
+                sumLeft += num4 % 10;
             }
             num4 /= 10;
         }
