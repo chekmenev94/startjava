@@ -2,8 +2,8 @@ public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
         int counter = -10;
-        long sumEvenNums = 0;
-        long sumOddNums = 0;
+        int sumEvenNums = 0;
+        int sumOddNums = 0;
         do {
             if (counter % 2 == 0) {
                 sumEvenNums += counter;
@@ -49,7 +49,7 @@ public class CyclesTheme {
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
         int counter1 = 1;
-        for (int i = 1; i < 24; i += 2) {
+        for (int i = 1; i < 30; i += 2) {
             System.out.printf("%3d", i);
             if (counter1++ == 5) {
                 System.out.println();
@@ -89,10 +89,10 @@ public class CyclesTheme {
 
         int countRows = 1;
         while (countRows < 6) {
-            int countColumn = countRows;
-            while (countColumn < 6) {
+            int countColumns = countRows;
+            while (countColumns < 6) {
                 System.out.print("#");
-                countColumn++;
+                countColumns++;
             }
             System.out.println();
             countRows++;
@@ -101,11 +101,11 @@ public class CyclesTheme {
 
         countRows = 1;
         do {
-            int countColumn = 1;
+            int countColumns = 1;
             do {
                 System.out.print("$");
-                countColumn++;
-            } while (countColumn <= countRows && countColumn + countRows <= 6);
+                countColumns++;
+            } while (countColumns <= countRows && countColumns + countRows <= 6);
             System.out.println();
             countRows++;
          } while (countRows < 6);
