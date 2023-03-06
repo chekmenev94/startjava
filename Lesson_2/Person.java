@@ -10,11 +10,11 @@ public class Person {
         System.out.println("moving");
     }
 
-    void sitDown() {
+    void sit() {
         System.out.println("sit");
     }
 
-    void running() {
+    void run() {
         System.out.println("run");
     }
 
