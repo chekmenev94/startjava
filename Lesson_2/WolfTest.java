@@ -6,7 +6,7 @@ public class WolfTest {
         tank.setNickName("Танк");
         tank.setColor("Серый");
         tank.setWeight(44.1f);
-        tank.setAge(10);
+        tank.setAge(5);
 
         System.out.println("Пол: " + tank.getGender());
         System.out.println("Кличка: " + tank.getNickName());
