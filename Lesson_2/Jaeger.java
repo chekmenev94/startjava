@@ -1,38 +1,139 @@
 public class Jaeger {
-    private String modelName = "Brancer Phoenix";
-    private String mark = "Mark - 5";
-    private String origin = "USA";
-    private float height = 70.7f;
-    private float weight = 2.1f;
-    private int speed = 3;
-    private int strenght = 8;
-    private int armor = 9;
+    private String modelName;
+    private String mark;
+    private String origin;
+    private float height;
+    private float weight;
+    private int speed;
+    private int strenght;
+    private int armor;
+// Боевые характеристики оборудование система энерг.ядро оружие умение количество убитых
+    // private String equipment;
+    // private String opSystem;
+    // private String energyCore;
+    private String weapon;
+    private String skill;
+    // private String kaijuKilled;
 
+// конструктор
+    JaegerNew(String modelName, String mark) {
+        this.modelName = modelName;
+        this.mark = mark;
+        System.out.println(modelName);
+        System.out.println(mark);
+    }
+// конец конструктора
+
+// Присваивание данных
     public String getModelName() {
         return modelName;
     }
-
     public void setModelName(String modelName) {
-        if (modelName == "") {
-            System.out.println("Пустая строка");
-        } else {
-            this.modelName = modelName;
-        }
+        this.modelName = modelName;
     }
 
+    public String getMark() {
+        return mark;
+    }
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getStrenght() {
+        return strenght;
+    }
+    public void setStrenght(int strenght) {
+        this.strenght = strenght;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+
+    public String getWeapon() {
+        return weapon;
+    }
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
+// конец присваивания данных
+
     public boolean drift() {
-        System.out.println("Вы вошли в дрифт");
+        System.out.println("Вошли в дрифт. Робот активирован!");
         return true;
     }
 
     public void move() {
-        System.out.println("Вы прошли 5 шагов");
+        System.out.println("Вы прошли 5 километров");
+    }
+
+    public void disguise() {
+        System.out.println("Маскировка...");
     }
 
     public String scanKaiju() {
+        System.out.println("Обнаружен Kaiju");
         return "nothing";
     }
 
-    public void useVortexCannon() {
+// методы только для Crimson Typhoon
+    public void thunderCloud() {
+        System.out.println("Образование грозового облака!");
+    }
+
+    public void jetKick() {
+        System.out.println("Реактивный удар!");
+    }
+// конец методов Crimson Typhoon
+
+// методы только для Gipsy Danger
+    public void palmGrip() {
+        System.out.println("Захват ладонью!");
+    }
+
+    public void elbowRocket() {
+        System.out.println("Ракета локтя!");
+    }
+// конец методов Gipsy Danger
+    public void killKaiju() {
+        System.out.println("Вы убили Kaiju!");
     }
 }
