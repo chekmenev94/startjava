@@ -1,6 +1,5 @@
 public class WolfTest {
     public static void main(String[] args) {
-
         Wolf tank = new Wolf();
         tank.setGender("Самец");
         tank.setNickName("Танк");

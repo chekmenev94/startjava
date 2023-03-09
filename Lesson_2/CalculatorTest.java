@@ -1,24 +1,32 @@
+import java.util.Scanner;
+
 public class CalculatorTest {
 
     public static void main(String[] args) {
-        CalculatorNew calculator1 = new CalculatorNew();
-        int num1 = calculator1.getInt();
-        char operation = calculator1.getOperation();
-        int num2 = calculator1.getInt();
-        int result = calculator1.calc(num1,num2,operation);
-        System.out.println("Результат операции: "+ result);
-
-        String replay = calculator1.getReplay();
-        while(replay == "yes") {
-            num1 = calculator1.getInt();
-            operation = calculator1.getOperation();
-            num2 = calculator1.getInt();
-            result = calculator1.calc(num1,num2,operation);
-            System.out.println("Результат операции: "+ result);
-            continue;
-        }
-        if (replay == "no") {
-            System.out.println("Поздравляем вы закончили вычисления!");
+        Scanner scan = new Scanner(System.in);
+        Calculator calculate = new Calculator();
+        while (true) {
+            System.out.println("Введите значение первой переменной ");
+            calculate.getNum1(scan.nextInt());
+            System.out.println("Введите арифметический знак ");
+            calculate.getOperation(scan.next().charAt(0));
+            System.out.println("Введите значение второй переменной ");
+            calculate.getNum2(scan.nextInt());
+            int result = calculate.calc();
+            System.out.println("Результат вычислений: " + result);
+            System.out.println("Хотите продолжить вычисления? [yes/no] ");
+            String replay;
+            do {
+                replay = scan.nextLine();
+                if(replay.equals ("yes")) {
+                    continue;
+                } else if (replay.equals ("no")) {
+                    break;
+                }
+            } while (!(replay.equals ("yes") || replay.equals ("no")));
+            if (replay.equals ("no")) {
+                break;
+            }
         }
     }
 }
