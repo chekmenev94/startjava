@@ -15,15 +15,6 @@ public class Jaeger {
     private String skill;
     // private String kaijuKilled;
 
-// конструктор
-    JaegerNew(String modelName, String mark) {
-        this.modelName = modelName;
-        this.mark = mark;
-        System.out.println(modelName);
-        System.out.println(mark);
-    }
-// конец конструктора
-
 // Присваивание данных
     public String getModelName() {
         return modelName;
@@ -96,6 +87,21 @@ public class Jaeger {
     }
 // конец присваивания данных
 
+// конструктор
+    public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed, int strenght, int armor, String weapon, String skill) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strenght = strenght;
+        this.armor = armor;
+        this.weapon = weapon;
+        this.skill = skill;
+    }
+// конец конструктора
+
     public boolean drift() {
         System.out.println("Вошли в дрифт. Робот активирован!");
         return true;
@@ -126,7 +132,7 @@ public class Jaeger {
 
 // методы только для Gipsy Danger
     public void palmGrip() {
-        System.out.println("Захват ладонью!");
+        System.out.println("Захват!");
     }
 
     public void elbowRocket() {
