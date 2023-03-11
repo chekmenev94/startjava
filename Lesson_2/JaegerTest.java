@@ -1,7 +1,6 @@
 public class JaegerTest {
     public static void main(String[] args) {
-
-        Jaeger jaegerOne = new Jaeger("", "", "", 1.0f, 1.0f, 1, 1, 1,"", "");
+        Jaeger jaegerOne = new Jaeger();
         System.out.println("\n1. [Выбор первого робота] ");
         jaegerOne.setModelName("Crimson Typhoon");
         System.out.println("Вы выбрали: " + jaegerOne.getModelName());
@@ -33,7 +32,8 @@ public class JaegerTest {
         jaegerOne.jetKick();
         jaegerOne.killKaiju();
 
-        Jaeger jaegerTwo = new Jaeger("Gipsy Danger", "Mark-3", "USA", 260.0f, 1.980f, 7, 8, 6,"Plasmacaster I-19", "Street Fighter");
+        Jaeger jaegerTwo = new Jaeger("Gipsy Danger", "Mark-3", "USA", 260.0f, 1.980f, 7, 8, 6,
+                "Plasmacaster I-19", "Street Fighter");
         System.out.println("\n2. [Выбор второго робота] ");
         System.out.println("Вы выбрали: " + jaegerTwo.getModelName());
         System.out.println("Модификация: " + jaegerTwo.getMark());
@@ -54,24 +54,5 @@ public class JaegerTest {
         jaegerTwo.palmGrip();
         jaegerTwo.elbowRocket();
         jaegerTwo.killKaiju();
-
-
-
-
-
-
-
-
-
-// modelName Gipsy Danger
-// mark Mark-3
-// origin USA
-// height 260.0
-// weight 1.980
-// speed 7
-// strenght 8
-// armor 6
-// weapon Plasmacaster I-19
-// skill Street Fighter
     }
 }
