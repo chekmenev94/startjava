@@ -16,12 +16,9 @@ public class CalculatorTest {
             int result = calculationOne.calc();
             System.out.println("Результат вычислений: " + result);
             do {
+                System.out.println("Хотите продолжить вычисления? [yes/no] ");
                 replay = scan.nextLine();
-                if (!(replay.equals ("yes") || replay.equals ("no"))) {
-                    System.out.println("Хотите продолжить вычисления? [yes/no] ");
-                }
-            } while (!(replay.equals ("yes") || replay.equals ("no")));
-            
+            } while (!replay.equals ("yes") && !replay.equals ("no"));
         } while(replay.equals ("yes"));
     }
 }
