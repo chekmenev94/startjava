@@ -4,24 +4,12 @@ public class Calculator {
     private int num2;
     private char operation;
 
-    public int getNum1() {
-        return num1;
-    }
-
     public void setNum1(int num) {
         this.num1 = num;
     }
 
-    public char getOperation() {
-        return operation;
-    }
-
     public void setOperation(char operation) {
         this.operation = operation;
-    }
-
-    public int getNum2() {
-        return num2;
     }
 
     public void setNum2(int num) {
