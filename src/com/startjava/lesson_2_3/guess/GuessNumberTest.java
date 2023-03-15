@@ -6,17 +6,14 @@ import java.util.Random;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Random generator = new Random();
         System.out.println("Введите имя первого игрока: ");
-        Player playerOne = new Player(scan.nextLine());
+        Player player1 = new Player(scan.nextLine());
         System.out.println("Введите имя второго игрока: ");
-        Player playerTwo = new Player(scan.nextLine());
-
-        GuessNumber gameOne = new GuessNumber(playerOne, playerTwo);
+        Player player2 = new Player(scan.nextLine());
+        GuessNumber gameOne = new GuessNumber(player1, player2);
         String replay;
         do {
-            gameOne.setSecretNum(generator.nextInt(100) + 1);
-            gameOne.gamePlayer(scan);
+            gameOne.playGame(scan);
             do {
                 scan.nextLine();
                 System.out.println("Хотите продолжить вычисления? [yes/no] ");
@@ -25,4 +22,3 @@ public class GuessNumberTest {
         } while (replay.equals ("yes"));
     }
 }
-

@@ -1,6 +1,7 @@
 package com.startjava.lesson_2_3.guess;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class GuessNumber {
     private int secretNum = 10;
@@ -9,18 +10,20 @@ public class GuessNumber {
     private String player2;
     private int numPlayer;
 
-    public GuessNumber(Player playerOne, Player playerTwo) {
-        this.player1 = playerOne.getName();
-        this.player2 = playerTwo.getName();
+    public GuessNumber(Player player1, Player player2) {
+        this.player1 = player1.getName();
+        this.player2 = player2.getName();
     }
 
     public void setSecretNum(int secretNum) {
         this.secretNum = secretNum;
     }
 
-    public void gamePlayer(Scanner scan) {
+    public void playGame(Scanner scan) {
+        Random generator = new Random();
+        setSecretNum(generator.nextInt(100) + 1);
         do {
-            System.out.println("Игрок " + player1 + " ваше число ");
+            System.out.println("\nИгрок " + player1 + " ваше число ");
             numPlayer = scan.nextInt();
             if (numPlayer > secretNum) {
                 System.out.println("Число больше того, что загадал компьютер ");
@@ -29,7 +32,7 @@ public class GuessNumber {
             } else if (numPlayer == secretNum) {
                 break;
             }
-            System.out.println("Игрок " + player2 + " ваше число ");
+            System.out.println("\nИгрок " + player2 + " ваше число ");
             numPlayer = scan.nextInt();
             if (numPlayer > secretNum) {
                 System.out.println("Число больше того, что загадал компьютер ");

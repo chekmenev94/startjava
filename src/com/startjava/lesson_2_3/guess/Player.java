@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3.guess;
 
-import java.util.Scanner;
 
 public class Player {
     private String name;
@@ -8,7 +7,6 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-
     }
 
     public String getName() {
@@ -18,6 +16,7 @@ public class Player {
     public int getNum() {
         return num;
     }
+
     public void setNum(int num) {
         this.num = num;
     }
