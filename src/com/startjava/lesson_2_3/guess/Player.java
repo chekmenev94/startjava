@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3.guess;
 
+import java.util.Scanner;
 
 public class Player {
     private String name;
@@ -17,7 +18,7 @@ public class Player {
         return num;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNum(Scanner scan) {
+        this.num = scan.nextInt();
     }
 }
