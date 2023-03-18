@@ -14,10 +14,9 @@ public class GuessNumberTest {
         do {
             game.play(scan);
             do {
-                scan.nextLine();
                 System.out.println("Хотите продолжить вычисления? [yes/no] ");
                 replay = scan.nextLine();
-            } while (!replay.equals ("yes") && !replay.equals ("no"));
-        } while (replay.equals ("yes"));
+            } while (!replay.equals("yes") && !replay.equals("no"));
+        } while (replay.equals("yes"));
     }
 }
