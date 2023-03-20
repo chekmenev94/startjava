@@ -40,7 +40,6 @@ public class ArrayTheme {
         answer = result2 > 0 ? "1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " : "0 * 9 = ";
         System.out.println(answer + "" + result2);
 
-
         System.out.println("\n3. Удаление элементов массива");
         double[] nums2 = new double[15];
         double sum = 0;
@@ -75,9 +74,9 @@ public class ArrayTheme {
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
         char[] letters = new char[26];
-        int k = 0;
+        int index = 0;
         for(char ch = 'Z'; ch >= 'A'; ch--) {
-            letters[k++] = ch;
+            letters[index++] = ch;
         }
         for(int i = 0; i < letters.length; i++) {
             for(int j = 0; j <= i; j++) {
@@ -86,7 +85,7 @@ public class ArrayTheme {
             System.out.println("");
         }
 
-        System.out.println("\n4. Генерация уникальных чисел");
+        System.out.println("\n5. Генерация уникальных чисел");
         double[] numsArr = new double[30];
         for(int i = 0; i < numsArr.length; i++) {
             numsArr[i] = 60 + Math.random() * 40;
