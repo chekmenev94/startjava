@@ -7,8 +7,8 @@ public class ArrayTheme {
         System.out.println("1. Реверс значений массива");
         int[] nums = {6, 4, 2, 7, 3, 5, 1};
         System.out.println("Массив: ");
-        for(int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
+        for (int num : nums) {
+            System.out.print(num + " ");
         }
         System.out.println("\nМассив после реверса: ");
         for(int i = nums.length - 1; i >= 0; i--) {
@@ -22,7 +22,7 @@ public class ArrayTheme {
         }
         int result1 = 1;
         for(int i = 0; i < nums1.length; i++) {
-            result1 = (i > 0 && i < 9) ? result1 * nums1[i]: result1 * 1;
+            result1 = (i > 0 && i < 9) ? result1 * nums1[i]: result1;
         }
         int result2 = nums1[0] * nums1[9];
         System.out.println("1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " + result1);
@@ -30,23 +30,21 @@ public class ArrayTheme {
 
         System.out.println("\n3. Удаление элементов массива");
         double[] nums2 = new double[15];
-        double sum = 0;
         for(int i = 0; i < nums2.length; i++) {
             nums2[i] = Math.random();
-            sum += nums2[i];
         }
-        double averageNum = sum / nums2.length;
         System.out.println("Исходный массив: ");
         for(int i = 0; i < nums2.length; i++) {
             System.out.printf(" %.3f", nums2[i]);
             if(i == 7) {
-                System.out.println("");
+                System.out.println();
             }
         }
-        System.out.printf("\nСреднее значение = %.3f", averageNum);
+        int averageIndex = nums2.length / 2;
+        System.out.print("\nИндекс средней ячейки = " + averageIndex);
         int quantity = 0;
         for (int i = 0; i < nums2.length; i++) {
-            if (nums2[i] > averageNum) {
+            if (nums2[i] > nums2[averageIndex]) {
                 nums2[i] = 0;
                 quantity++;
             }
@@ -55,7 +53,7 @@ public class ArrayTheme {
         for(int i = 0; i < nums2.length; i++) {
             System.out.printf(" %.3f", nums2[i]);
             if(i == 7) {
-                System.out.println("");
+                System.out.println();
             }
         }
         System.out.println("\nКоличество обнуленных ячеек = " + quantity);
@@ -70,7 +68,7 @@ public class ArrayTheme {
             for(int j = 0; j <= i; j++) {
                 System.out.print(letters[j]);
             }
-            System.out.println("");
+            System.out.println();
         }
 
         System.out.println("\n5. Генерация уникальных чисел");
@@ -80,11 +78,11 @@ public class ArrayTheme {
         }
         Arrays.sort(numsArr);
         int cycle = 0;
-        for (int i = 0; i < numsArr.length; i++) {
-            System.out.printf(" %.2f", numsArr[i]);
-            cycle ++;
-            if(cycle == 10) {
-                System.out.println("");
+        for (double v : numsArr) {
+            System.out.printf(" %.2f", v);
+            cycle++;
+            if (cycle == 10) {
+                System.out.println();
                 cycle = 0;
             }
         }
@@ -106,10 +104,6 @@ public class ArrayTheme {
     public static String[] concatArray(String[] a, String[] b) {
 
         String[] r = new String[a.length + b.length];
-        if (a == null)
-            return b;
-        if (b == null)
-            return a;
         System.arraycopy(a, 0, r, 0, a.length);
         System.arraycopy(b, 0, r, a.length, b.length);
         return r;
