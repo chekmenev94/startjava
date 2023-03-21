@@ -4,20 +4,14 @@ import java.util.Arrays;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-
         System.out.println("1. Реверс значений массива");
         int[] nums = {6, 4, 2, 7, 3, 5, 1};
         System.out.println("Массив: ");
         for(int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
         }
-        for(int i = 0; i < nums.length / 2; i++) {
-            int temp = nums[i];
-            nums[i] = nums[nums.length - 1 - i];
-            nums[nums.length - 1 - i] = temp;
-        }
         System.out.println("\nМассив после реверса: ");
-        for(int i = 0; i < nums.length; i++) {
+        for(int i = nums.length - 1; i >= 0; i--) {
             System.out.print(nums[i] + " ");
         }
 
@@ -27,18 +21,12 @@ public class ArrayTheme {
             nums1[i] = i;
         }
         int result1 = 1;
-        int result2 = 1;
         for(int i = 0; i < nums1.length; i++) {
-            if (i > 0 && i < 9) {
-                result1 *= nums1[i];
-            } else {
-                result2 *= nums1[i];
-            }
+            result1 = (i > 0 && i < 9) ? result1 * nums1[i]: result1 * 1;
         }
-        String answer = result1 > 0 ? "1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " : "0 * 9 = ";
-        System.out.println(answer + "" + result1);
-        answer = result2 > 0 ? "1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " : "0 * 9 = ";
-        System.out.println(answer + "" + result2);
+        int result2 = nums1[0] * nums1[9];
+        System.out.println("1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " + result1);
+        System.out.println("0 * 9 = " + result2);
 
         System.out.println("\n3. Удаление элементов массива");
         double[] nums2 = new double[15];
@@ -100,5 +88,30 @@ public class ArrayTheme {
                 cycle = 0;
             }
         }
+
+        System.out.println("\n6. Копирование не пустых строк");
+        String[] array = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        String[] copyArray1 = Arrays.copyOfRange(array, 1, 2);
+        String[] copyArray2 = Arrays.copyOfRange(array, 3, 6);
+        String[] copyArray3 = Arrays.copyOfRange(array, 7, 10);
+
+        String[] copyArray4 = concatArray(copyArray1, copyArray2);
+        String[] copyArray5 = concatArray(copyArray4, copyArray3);
+
+        System.out.println("Исходный массив: ");
+        System.out.println(Arrays.toString(array));
+        System.out.println("Скопированный массив: ");
+        System.out.println(Arrays.toString(copyArray5));
+    }
+    public static String[] concatArray(String[] a, String[] b) {
+
+        String[] r = new String[a.length + b.length];
+        if (a == null)
+            return b;
+        if (b == null)
+            return a;
+        System.arraycopy(a, 0, r, 0, a.length);
+        System.arraycopy(b, 0, r, a.length, b.length);
+        return r;
     }
 }
