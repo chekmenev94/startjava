@@ -5,81 +5,82 @@ import java.util.Arrays;
 public class ArrayTheme {
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
-        int[] nums = {6, 4, 2, 7, 3, 5, 1};
+        int[] intArr = {6, 4, 2, 7, 3, 5, 1};
+        int len = intArr.length;
         System.out.println("Массив: ");
-        for (int num : nums) {
+        for (int num : intArr) {
             System.out.print(num + " ");
         }
+        for(int i = 0; i < len / 2; i++) {
+            int tmp = intArr[i];
+            intArr[i] = intArr[len - 1 - i];
+            intArr[len - 1 - i] = tmp;
+        }
         System.out.println("\nМассив после реверса: ");
-        for(int i = nums.length - 1; i >= 0; i--) {
-            System.out.print(nums[i] + " ");
+        for (int num : intArr) {
+            System.out.print(num + " ");
         }
 
         System.out.println("\n\n2. Вывод произведения элементов массива");
-        int[] nums1 = new int[10];
-        for(int i = 0; i < nums1.length; i++) {
-            nums1[i] = i;
+        int[] numsArr = new int[10];
+        len = numsArr.length;
+        for(int i = 0; i < len; i++) {
+            numsArr[i] = i;
         }
         int result1 = 1;
-        for(int i = 0; i < nums1.length; i++) {
-            result1 = (i > 0 && i < 9) ? result1 * nums1[i]: result1;
+        for(int i = 1; i < len - 1; i++) {
+            result1 *= numsArr[i];
+            String operator = (i < 8) ? " * " : " = ";
+            System.out.print(numsArr[i] + operator);
         }
-        int result2 = nums1[0] * nums1[9];
-        System.out.println("1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " + result1);
-        System.out.println("0 * 9 = " + result2);
+        System.out.print(result1);
+        System.out.println("\nЗначение под индексом 0 = " + numsArr[0] + ", 9 = " + numsArr[9]);
 
         System.out.println("\n3. Удаление элементов массива");
-        double[] nums2 = new double[15];
-        for(int i = 0; i < nums2.length; i++) {
-            nums2[i] = Math.random();
+        double[] numsArr1 = new double[15];
+        len = numsArr1.length;
+        for(int i = 0; i < len; i++) {
+            numsArr1[i] = Math.random();
         }
         System.out.println("Исходный массив: ");
-        for(int i = 0; i < nums2.length; i++) {
-            System.out.printf(" %.3f", nums2[i]);
-            if(i == 7) {
-                System.out.println();
-            }
-        }
-        int averageIndex = nums2.length / 2;
-        System.out.print("\nИндекс средней ячейки = " + averageIndex);
+        outputArray(numsArr1);
+        int middleIndex = len / 2;
+        System.out.print("\nИндекс средней ячейки = " + middleIndex);
         int quantity = 0;
-        for (int i = 0; i < nums2.length; i++) {
-            if (nums2[i] > nums2[averageIndex]) {
-                nums2[i] = 0;
+        for (int i = 0; i < len; i++) {
+            if (numsArr1[i] > numsArr1[middleIndex]) {
+                numsArr1[i] = 0;
                 quantity++;
             }
         }
         System.out.println("\nИзмененный массив: ");
-        for(int i = 0; i < nums2.length; i++) {
-            System.out.printf(" %.3f", nums2[i]);
-            if(i == 7) {
-                System.out.println();
-            }
-        }
+        outputArray(numsArr1);
         System.out.println("\nКоличество обнуленных ячеек = " + quantity);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
-        char[] letters = new char[26];
+        char[]  alphabet = new char[26];
         int index = 0;
-        for(char ch = 'Z'; ch >= 'A'; ch--) {
-            letters[index++] = ch;
+        len = alphabet.length;
+        for(char ch = 'A'; ch <= 'Z'; ch++) {
+             alphabet[index++] = ch;
         }
-        for(int i = 0; i < letters.length; i++) {
-            for(int j = 0; j <= i; j++) {
-                System.out.print(letters[j]);
+        for(int i = len - 1; i >= 0; i--) {
+            for(int j = len - 1; j >= i; j--) {
+                System.out.print( alphabet[j]);
             }
             System.out.println();
         }
 
         System.out.println("\n5. Генерация уникальных чисел");
-        double[] numsArr = new double[30];
-        for(int i = 0; i < numsArr.length; i++) {
-            numsArr[i] = 60 + Math.random() * 40;
+        double[] uniqueNumsArr = new double[30];
+        len = uniqueNumsArr.length;
+        for(int i = 0; i < len; i++) {
+            uniqueNumsArr[i] = 60 + Math.random() * 40;
         }
-        Arrays.sort(numsArr);
+        Arrays.sort(uniqueNumsArr);
         int cycle = 0;
-        for (double v : numsArr) {
-            System.out.printf(" %.2f", v);
+        for (double num : uniqueNumsArr) {
+            System.out.printf(" %.3f", num);
             cycle++;
             if (cycle == 10) {
                 System.out.println();
@@ -101,8 +102,18 @@ public class ArrayTheme {
         System.out.println("Скопированный массив: ");
         System.out.println(Arrays.toString(copyArray5));
     }
-    public static String[] concatArray(String[] a, String[] b) {
 
+    public static void outputArray(double[] arr) {
+        double[] numArr = arr;
+        for(int i = 0; i < numArr.length; i++) {
+            System.out.printf(" %.3f", numArr[i]);
+            if(i == 7) {
+                System.out.println();
+            }
+        }
+    }
+    
+    public static String[] concatArray(String[] a, String[] b) {
         String[] r = new String[a.length + b.length];
         System.arraycopy(a, 0, r, 0, a.length);
         System.arraycopy(b, 0, r, a.length, b.length);
