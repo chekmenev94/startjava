@@ -74,12 +74,17 @@ public class ArrayTheme {
         double[] uniqueNums = new double[30];
         len = uniqueNums.length;
         for(int i = 0; i < len; i++) {
-            uniqueNums[i] = 60 + Math.random() * 40;
+            boolean test = true;
+            while(test == true) {
+                uniqueNums[i] = 60 + Math.random() * 40;
+                uniqueNums[i] = (int)uniqueNums[i];
+                test = check(uniqueNums, uniqueNums[i], i);
+            }
         }
         Arrays.sort(uniqueNums);
         int cycle = 0;
         for (double num : uniqueNums) {
-            System.out.printf(" %.3f", num);
+            System.out.print(num + " ");
             cycle++;
             if (cycle == 10) {
                 System.out.println();
@@ -89,17 +94,31 @@ public class ArrayTheme {
 
         System.out.println("\n6. Копирование не пустых строк");
         String[] array = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        String[] copyArray1 = Arrays.copyOfRange(array, 1, 2);
-        String[] copyArray2 = Arrays.copyOfRange(array, 3, 6);
-        String[] copyArray3 = Arrays.copyOfRange(array, 7, 10);
-
-        String[] copyArray4 = concatArray(copyArray1, copyArray2);
-        String[] copyArray5 = concatArray(copyArray4, copyArray3);
-
+        len = 0;
+        String blank;
+        for (int i = 0; i < array.length; i++) {
+            blank = array[i];
+            if (blank.isBlank() == false) {
+                len++;
+            }
+        }
+        String[] copyArray = new String[len];
+        int indexArr = 0;
+        for(int i = 0; i < len; i++) {
+            while (indexArr < array.length) {
+                if (array[indexArr].isBlank() == false) {
+                    copyArray[i] = array[indexArr];
+                    indexArr++;
+                    break;
+                } else {
+                    indexArr++;
+                }
+            }
+        }
         System.out.println("Исходный массив: ");
         System.out.println(Arrays.toString(array));
         System.out.println("Скопированный массив: ");
-        System.out.println(Arrays.toString(copyArray5));
+        System.out.println(Arrays.toString(copyArray));
     }
 
     public static void outputIntArr(int[] arr) {
@@ -118,10 +137,14 @@ public class ArrayTheme {
         }
     }
     
-    public static String[] concatArray(String[] a, String[] b) {
-        String[] r = new String[a.length + b.length];
-        System.arraycopy(a, 0, r, 0, a.length);
-        System.arraycopy(b, 0, r, a.length, b.length);
-        return r;
+    public static boolean check(double[] arr, double toCheckValue, int index) {
+        boolean test = false;
+        for (int i = 0; i < index; i++) {
+            if (arr[i] == toCheckValue) {
+                test = true;
+                break;
+            }
+        }
+        return test;
     }
 }
