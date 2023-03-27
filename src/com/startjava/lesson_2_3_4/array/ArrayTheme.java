@@ -74,7 +74,7 @@ public class ArrayTheme {
         for(int i = 0; i < len; i++) {
             do {
                 uniqueNums[i] = (int) (60 + Math.random() * 40);
-            } while (check(uniqueNums, uniqueNums[i], i) == true);
+            } while (check(uniqueNums, uniqueNums[i], i));
         }
         Arrays.sort(uniqueNums);
         int numElement = 0;
