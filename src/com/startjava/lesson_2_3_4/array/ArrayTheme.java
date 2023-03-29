@@ -11,9 +11,8 @@ public class ArrayTheme {
         outputIntArr(intArr);
 
         for(int i = 0; i < len / 2; i++) {
-            len--;
             int tmp = intArr[i];
-            intArr[i] = intArr[len];
+            intArr[i] = intArr[--len];
             intArr[len] = tmp;
         }
         System.out.println("\nМассив после реверса: ");
@@ -28,7 +27,7 @@ public class ArrayTheme {
         int result = 1;
         for(int i = 1; i < len - 1; i++) {
             result *= multipliers[i];
-            System.out.print((i < len - 2) ? multipliers[i] + " * " : multipliers[i] + " = ");
+            System.out.print((multipliers[i]) + ((i < len - 2) ? " * " : " = "));
         }
         System.out.print(result);
         System.out.println("\nЗначение под индексом 0 = " + multipliers[0]
@@ -69,7 +68,7 @@ public class ArrayTheme {
         }
 
         System.out.println("\n5. Генерация уникальных чисел");
-        double[] uniqueNums = new double[30];
+        int[] uniqueNums = new int[30];
         len = uniqueNums.length;
         for(int i = 0; i < len; i++) {
             do {
@@ -78,7 +77,7 @@ public class ArrayTheme {
         }
         Arrays.sort(uniqueNums);
         int numElement = 0;
-        for (double num : uniqueNums) {
+        for (int num : uniqueNums) {
             System.out.print(num + " ");
             numElement++;
             if (numElement == 10) {
@@ -90,18 +89,17 @@ public class ArrayTheme {
         System.out.println("\n6. Копирование не пустых строк");
         String[] srcStrings = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
         len = 0;
-        String blank;
-        for (int i = 0; i < srcStrings.length; i++) {
-            blank = srcStrings[i];
-            len += (!blank.isBlank()) ? 1 : 0;
+        for (String srcString : srcStrings) {
+            len = (!srcString.isBlank()) ? ++len : len;
         }
         String[] destStrings = new String[len];
         int indexCopy = 0;
         int indexStart =0;
-        for(int i = 0; i < srcStrings.length; i++) {
-            if (srcStrings[i].isBlank()) {
+        for (String srcString : srcStrings) {
+            if (srcString.isBlank()) {
                 indexCopy++;
             } else {
+                System.out.println(indexCopy + "....." + indexStart);
                 System.arraycopy(srcStrings, indexCopy, destStrings, indexStart, 1);
                 indexCopy++;
                 indexStart++;
@@ -120,16 +118,15 @@ public class ArrayTheme {
     }
 
     public static void outputArray(double[] arr) {
-        double[] numArr = arr;
-        for(int i = 0; i < numArr.length; i++) {
-            System.out.printf(" %.3f", numArr[i]);
+        for(int i = 0; i < arr.length; i++) {
+            System.out.printf(" %.3f", arr[i]);
             if(i == 7) {
                 System.out.println();
             }
         }
     }
     
-    public static boolean check(double[] arr, double toCheckValue, int index) {
+    public static boolean check(int[] arr, int toCheckValue, int index) {
         boolean test = false;
         for (int i = 0; i < index; i++) {
             if (arr[i] == toCheckValue) {
