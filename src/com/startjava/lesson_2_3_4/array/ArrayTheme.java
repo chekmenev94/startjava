@@ -94,15 +94,20 @@ public class ArrayTheme {
         }
         String[] destStrings = new String[len];
         int indexCopy = 0;
-        int indexStart =0;
-        for (String srcString : srcStrings) {
-            if (srcString.isBlank()) {
-                indexCopy++;
+        int indexStart = 0;
+        while (indexCopy < srcStrings.length) {
+            int indexSum = 0;
+            if (srcStrings[indexCopy].isBlank()) {
+            indexCopy++;
             } else {
-                System.out.println(indexCopy + "....." + indexStart);
-                System.arraycopy(srcStrings, indexCopy, destStrings, indexStart, 1);
-                indexCopy++;
-                indexStart++;
+                while (!srcStrings[indexCopy].isBlank()) {
+                    indexSum++;
+                    indexCopy++;
+                }
+                indexCopy -= indexSum;
+                System.arraycopy(srcStrings, indexCopy, destStrings, indexStart, indexSum);
+                indexStart += indexSum;
+                indexCopy += indexSum;
             }
         }
         System.out.println("Исходный массив: ");
