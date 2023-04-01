@@ -27,7 +27,7 @@ public class ArrayTheme {
         int result = 1;
         for(int i = 1; i < len - 1; i++) {
             result *= multipliers[i];
-            System.out.print((multipliers[i]) + ((i < len - 2) ? " * " : " = "));
+            System.out.print(multipliers[i] + ((i < len - 2) ? " * " : " = "));
         }
         System.out.print(result);
         System.out.println("\nЗначение под индексом 0 = " + multipliers[0]
@@ -90,7 +90,7 @@ public class ArrayTheme {
         String[] srcStrings = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
         len = 0;
         for (String srcString : srcStrings) {
-            len = (!srcString.isBlank()) ? ++len : len;
+            if (!srcString.isBlank()) len++;
         }
         String[] destStrings = new String[len];
         int indexCopy = 0;
@@ -98,7 +98,7 @@ public class ArrayTheme {
         while (indexCopy < srcStrings.length) {
             int indexSum = 0;
             if (srcStrings[indexCopy].isBlank()) {
-            indexCopy++;
+                indexCopy++;
             } else {
                 while (!srcStrings[indexCopy].isBlank()) {
                     indexSum++;
