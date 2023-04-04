@@ -11,7 +11,7 @@ public class CalculatorTest1 {
                 String input = scan.nextLine();
                 String[] operation = input.split(" ");
                 double result = Calculator1.calculate(operation);
-                System.out.printf((result == Math.ceil(result)) ? "Результат вычислений: " +
+                System.out.printf((result % 1 == 0) ? "Результат вычислений: " +
                     Math.round(result): "Результат вычислений: %.3f", result);
             } catch(RuntimeException e) {
                 continue;
