@@ -7,19 +7,8 @@ public class Calculator1 {
     private static String operation;
     private static double num2;
 
-    public static void checkExpression() {
-        if (num1 < 0 || num2 < 0) {
-            throw new RuntimeException();
-        } else if (num1 % 1 != 0 || num2 % 1 != 0) {
-            throw new RuntimeException();
-        }
-    }
-
-    public static double calculate(String string) {
-        String[] expression = string.split(" ");
-        num1 = Integer.parseInt(expression[0]);
-        operation = expression[1];
-        num2 = Integer.parseInt(expression[2]);
+    public static double calculate(String expression) {
+        splitExpression(expression);
         checkExpression();
         return switch (operation) {
             case "+" -> num1 + num2;
@@ -30,5 +19,21 @@ public class Calculator1 {
             case "^" -> Math.pow(num1, num2);
             default -> 0;
         };
+    }
+
+    private static void splitExpression(String expression) {
+        String[] elements = expression.split(" ");
+        num1 = Integer.parseInt(elements[0]);
+        operation = elements[1];
+        num2 = Integer.parseInt(elements[2]);
+    }
+
+    private static void checkExpression() {
+        if (num1 <= 0 || num2 <= 0) {
+            throw new RuntimeException();
+        }
+        if (num1 % 1 != 0 || num2 % 1 != 0) {
+            throw new RuntimeException();
+        }
     }
 }

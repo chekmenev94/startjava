@@ -11,13 +11,8 @@ public class CalculatorTest1 {
             String expression = scan.nextLine();
             try {
                 double result = Calculator1.calculate(expression);
-                // System.out.printf("Результат вычислений: " + ((result % 1 == 0) ? 
-                //    "%.0f", result : "%.3f",result));
-                if (result % 1 == 0) {
-                    System.out.printf("Результат вычислений: " + "%.0f", result);
-                } else {
-                    System.out.printf("Результат вычислений: " + "%.3f", result);
-                }
+                 System.out.printf("Результат вычислений: " + ((result % 1 == 0) ?
+                    "%.0f" : "%.3f"), result);
             } catch(RuntimeException e) {
                 System.out.println("Значения должны быть положительными и целыми числами");
                 continue;
